@@ -3,12 +3,20 @@
     grid-area:n;
 }
 .elments_of_nav{
+    text-align: center;
     color:white;
     font-size: 20px;
     padding:0 5px;
 }
+.elments_of_nav:first-child{
+    margin-top: 30px;
+}
 .elments_of_nav:hover{
     color:crimson;
     font-size: 24px;
-    transition: 0.3s;
+}
+.NavBar_item{
+    margin: auto;
+    width:80%;
+    border-bottom: 5px solid darkred;
 }
