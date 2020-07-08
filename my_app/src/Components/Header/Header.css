@@ -1,6 +1,5 @@
 .header{
     grid-area:h;
-    background-color: black;
     display: flex;
 }
 .logo_for_site{

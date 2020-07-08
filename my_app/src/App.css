@@ -1,6 +1,7 @@
 body{
   margin: 0;
   padding:0;
+  background-color: black;
 }
 .App{
   display: grid;
@@ -10,4 +11,7 @@ body{
   grid-template-areas: 
   "h h h"
   "n c c";
+}
+.app_wrapper_content{
+  grid-area:c;
 }

@@ -1,12 +1,10 @@
 .NavBar{
-    background-color: Black;
     grid-area:n;
 }
 .elments_of_nav{
-    text-align: center;
+    text-decoration: none;
     color:white;
     font-size: 20px;
-    padding:0 5px;
 }
 .elments_of_nav:first-child{
     margin-top: 30px;
@@ -17,6 +15,8 @@
     font-size: 24px;
 }
 .NavBar_item{
+    text-align: center;
+    padding: 20px 0;
     margin: auto;
     width:80%;
     border-bottom: 5px solid darkred;

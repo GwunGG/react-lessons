@@ -1,0 +1,12 @@
+.Avatar_name{
+    max-width:320px;
+    height: 160px;
+    margin:20px 20px;
+}
+.Profile_info{
+    padding-top: 5px;
+    color:white;
+}
+.Account_info{
+    display: flex;
+}
