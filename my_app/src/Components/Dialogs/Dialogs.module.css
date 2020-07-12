@@ -1,0 +1,25 @@
+.content {
+    color:white;
+    font-size: 36px;
+}
+.Dialogs_page{
+    color:white;
+}
+.dialogs_wrapper{
+    margin: 30px 30px;
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+}
+.dialog_item{
+    padding: 10px 10px;
+    font-size: 20px;
+}
+.dialogs_items .active{
+    color: crimson;
+    font-size: 26px;
+}
+.message_item{
+    padding: 10px 10px;
+    font-size: 20px;
+}

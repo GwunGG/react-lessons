@@ -1,0 +1,9 @@
+
+.dialog_item{
+    padding: 10px 10px;
+    font-size: 20px;
+}
+.dialogs_items .active{
+    color: crimson;
+    font-size: 26px;
+}
