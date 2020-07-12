@@ -1,5 +1,5 @@
 import React from 'react';
-import './Settings.css';
+import './Settings.module.css';
 
 const Settings = () => {
     return (

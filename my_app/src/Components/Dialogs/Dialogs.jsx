@@ -1,6 +1,37 @@
 import React from 'react';
 import s from './Dialogs.module.css';
+import DialogItem from './Dialogitem/DialogItem';
 
+
+const Message =(props)=>{
+    return(
+        <div className={s.message_item}>
+            {props.message}
+        </div>
+    )
+}
+
+let DialogsData =[
+    {id: 1, name : "Hleb"},
+    {id: 2, name:"Kosty"},
+    {id: 3, name:"An9"},
+    {id: 4, name:"Kol9"}
+]
+
+let DialogsElement=DialogsData.map((dialog) => {
+    return <DialogItem name={dialog.name} id={dialog.id} />;
+})
+
+let MessagesData =[
+    {id: 1, message:"ku"},
+    {id: 2, message:"hello"},
+    {id: 3, message:"be"},
+    {id: 4, message:"brr"}
+]
+let MessagesElement=MessagesData.map ((m) => {
+    return  <Message message={m.message} id={m.id}/>;
+})
+    
 
 const Dialogs = () => {
     return (
@@ -10,18 +41,11 @@ const Dialogs = () => {
             </div>
             <div className={s.dialogs_wrapper}>
                 <div className={s.dialogs_items}>
-                    <div className={s.dialog_item + ' ' + s.active}>Hleb</div>
-                    <div className={s.dialog_item}>Kosty</div>
-                    <div className={s.dialog_item}>An9</div>
-                    <div className={s.dialog_item}>Kolya</div>
+                    {DialogsElement}
                 </div>
 
                 <div className={s.messages_items}>
-                    <div className={s.message_item}>HI</div>
-                    <div className={s.message_item}>How are you?</div>
-                    <div className={s.message_item}>Okay, ty</div>
-                    <div className={s.message_item}>BB</div>
-                    <div className={s.message_item}>W8 pls, bitch</div>
+                    {MessagesElement}
                 </div>
             </div>
         </div>
