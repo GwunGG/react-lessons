@@ -1,39 +1,19 @@
 import React from 'react';
 import s from './Dialogs.module.css';
-import DialogItem from './Dialogitem/DialogItem';
+import DialogItem from "./DialogItem/DialogItem";
+import MessageItem from "./messages/MessageItem";
 
+const Dialogs = (props) => {
 
-const Message =(props)=>{
-    return(
-        <div className={s.message_item}>
-            {props.message}
-        </div>
-    )
-}
-
-let DialogsData =[
-    {id: 1, name : "Hleb"},
-    {id: 2, name:"Kosty"},
-    {id: 3, name:"An9"},
-    {id: 4, name:"Kol9"}
-]
-
-let DialogsElement=DialogsData.map((dialog) => {
-    return <DialogItem name={dialog.name} id={dialog.id} />;
-})
-
-let MessagesData =[
-    {id: 1, message:"ku"},
-    {id: 2, message:"hello"},
-    {id: 3, message:"be"},
-    {id: 4, message:"brr"}
-]
-let MessagesElement=MessagesData.map ((m) => {
-    return  <Message message={m.message} id={m.id}/>;
-})
+    let DialogsElement=props.DialogsData.DialogsData.map((dialog) => {
+        return <DialogItem name={dialog.name} id={dialog.id} />;
+      })
     
-
-const Dialogs = () => {
+    let MessagesElement=props.DialogsData.MessagesData.map ((m) => {
+        return  <MessageItem message={m.message} id={m.id}/>;
+      })
+      
+    
     return (
         <div className={s.Dialogs_page}>
             <div className={s.content}>
