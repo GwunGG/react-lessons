@@ -5,13 +5,10 @@ import FrienElm from './FriendElm/FrienElm';
 
 
 const Friends=(props)=>{
-
-    let FriendBar=props.NameData.map(friend=>(<FrienElm name={friend}/>))
-    
+        const FriendBar = props.NameData.FriendInfo.map(
+            (friend, index) => <FrienElm key={ index } name = { friend.name }/>)
     return(
         <div className={s.FriendList_wrapper}>
-            {FriendBar}
-            {FriendBar}
             {FriendBar}
         </div>   
         );

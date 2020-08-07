@@ -16,13 +16,13 @@ function App(props) {
     <BrowserRouter>
       <div className="App">
         <Header />
-        <NavBar />
+        <NavBar NameData={props.state.NameData}/>
         <div className="app_wrapper_content">
-          <Route path='/Dialogs' render={()=><Dialogs DialogsData={props.state.Dialogs}/>}/>
+          <Route path='/Dialogs' render={()=><Dialogs DialogsData={props.state.Dialogs} dispatch={props.dispatch}/>}/>
           <Route path='/Settings' render={()=><Settings/>}/>
           <Route path='/Music' render={()=><Music/>}/>
           <Route path='/News' render={()=><News/>}/>
-          <Route path='/Profile' render={()=><Profile PostData={props.state.Profile}/>}/>
+          <Route path='/Profile' render={()=><Profile PostData={props.state.Profile} dispatch={props.dispatch}/>}/>
           <Route path='/Friends' render={()=><Friends />}/>
         </div>
       </div>

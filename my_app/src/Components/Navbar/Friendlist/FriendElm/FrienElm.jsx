@@ -5,7 +5,7 @@ const FrienElm=(props)=>{
     
     return(
         <div>
-            {/*<img src={require({props.FriendData.NameData.AvaPath})} alt="Ava" className={s.avatar_img}/>*/}
+            <img src={require("./ava_phoptos/ava1.jpg")} alt="Ava" className={s.avatar_img}/>
             <p className={s.FriendName}>{props.name}</p>
         </div>   
         );
