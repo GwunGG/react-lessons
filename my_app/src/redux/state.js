@@ -1,7 +1,6 @@
-const AddPost="ADD-POST";
-const UpdateAreaText="UPDATE-AREA-TEXT"
-const AddMessage="ADD-MESSAGE"
-const MessageAreaChange="MESSAGE-AREA-CHANGE"
+import DialogsReducer from "./Dialogs-reducer.js";
+import ProfileReducer from "./Profile-Reducer.js";
+import NameDataReducer from "./NameData-reducer.js";
 let store = {
     _state:{
         Profile:{
@@ -43,55 +42,12 @@ let store = {
     },
 
     dispatch(action){   
-        if(action.type===AddPost){
-            let newPost={
-                id:5,
-                message:this._state.Profile.NewPostText,
-                likesCount:0
-            };
-            this._state.Profile.PostData.push(newPost);
-            this._state.Profile.NewPostText='';
-            this.rerenderAllTree();
-        } else if(action.type===UpdateAreaText){
-            this._state.Profile.NewPostText=action.newtext;
-            this.rerenderAllTree();
-        }
-
-        if(action.type===AddMessage){
-            let NewMessage ={
-                id:0,
-                message:this._state.Dialogs.MessageText
-            }
-            this._state.Dialogs.MessagesData.push(NewMessage);
-            this._state.Dialogs.MessageText='';
-            this.rerenderAllTree();
-        }else if(action.type===MessageAreaChange){
-            this._state.Dialogs.MessageText=action.someText;
-            this.rerenderAllTree();
-        }
+        this._state.Profile=ProfileReducer(this._state.Profile, action);
+        this._state.Dialogs=DialogsReducer(this._state.Dialogs, action);
+        this._state.NameData=NameDataReducer(this._state.NameData, action);
+        this.subscribe(this._state);
     }
 }
 
-export const actionCreatorAddPost = ()=>{
-    return{
-        type: "ADD-POST"
-    }
-}
-export const actionCreatorOnPostChange=(gettext)=>{
-    return{
-        type:"UPDATE-AREA-TEXT",
-        newtext:gettext
-    }
-}
-export const actionCreatorAddMessage =()=>{
-    return{
-        type:"ADD-MESSAGE"
-    }
-}
-export const actionMessageAreaChange =(text)=>{
-    return{
-        type:"MESSAGE-AREA-CHANGE",
-        someText:text
-    }
-}
+
 export default store;
